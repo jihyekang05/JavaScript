@@ -14,6 +14,7 @@
     background-image: url(./woods.jpg);
     background-size: cover;
     color: white;
+    border-radius: 0px;
 }
 
 .black-background {
@@ -32,4 +33,74 @@
     padding:20px;
     border-radius: 10px;
     
+}
+
+.jumbotron {
+    
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+
+.nav-sub {
+    display:none;
+}
+
+.list-group {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index : 5;
+  padding: 30px;
+ display:none;
+ opacity: 0;
+  transition: all 1s;
+    
+}
+    
+
+
+.white-bg {
+    
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+
+}
+
+.log {
+    
+}
+
+.show2 {
+    display:block;
+}
+
+.show-modal {
+/*    visibility: visible;*/
+    opacity: 1;
+    display:block;
+}
+
+.main-bg {
+    padding: 100px 20px;
+    background: lightgrey;
+}
+
+.game-bg {
+    padding: 100px 20px;
+    background:lightblue;
 }
