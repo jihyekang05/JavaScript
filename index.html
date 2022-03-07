@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,6 +56,7 @@
             }
 
         });
+
     </script>
 
 
@@ -73,29 +75,28 @@
     <!--    <button class="login" id="login">로그인</button>-->
 
     <script>
-    
-    var count = 0;
-    
-    $('.badge').on('click',function(){
-        count++;
-        console.log(count);
-        
-        if (count%2==1){
-            $('.badge').html("light 🔄");
-        }else{
-            $('.badge').html("Dark 🔄");
-        }
-    });
-        
-    
-         //badge 클릭횟수가 홀수면 내부 글자를 Light로 변경
+        var count = 0;
+
+        $('.badge').on('click', function() {
+            count++;
+            console.log(count);
+
+            if (count % 2 == 1) {
+                $('.badge').html("light 🔄");
+            } else {
+                $('.badge').html("Dark 🔄");
+            }
+        });
+
+
+        //badge 클릭횟수가 홀수면 내부 글자를 Light로 변경
         //badge 클릭횟수가 짝수면 내부 글자를 다크로 변경
-    
+
     </script>
-   
-   
-   
-   
+
+
+
+
     <ul class="list-group">
         <li class="list-group-item">An item</li>
         <li class="list-group-item">A second item</li>
@@ -109,6 +110,39 @@
     </div>
 
 
+    <div class="alert alert-danger">
+        <span class="num">5</span>초 이내 구매시 사은품 증정!
+    </div>
+
+
+    <script>
+        setTimeout(function() {
+            $('.alert').hide();
+        }, 5000);
+        
+        
+          setTimeout(function() {
+            $('.num').text('4');
+        }, 1000);
+        
+          setTimeout(function() {
+            $('.num').text('3');
+        }, 2000);
+          setTimeout(function() {
+            $('.num').text('2');
+        }, 3000);  setTimeout(function() {
+            $('.num').text('1');
+        }, 4000);
+//        setTimeout(함수, 1000);
+
+//        function 함수() {
+//            console.log('hello')
+//        }
+        //        setInterval(function() {
+        //            console.log('hello');
+        //        }, 1000);
+
+    </script>
     <script>
         //        document.querySelector('.hello').innerHTML = '바보';
         $('#login').on('click', function() {
@@ -128,16 +162,19 @@
 
             document.querySelector('.list-group').classList.toggle('show');
         })
+
     </script>
 
 
-    
-    
-    
-   
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-</body></html>
+</body>
+
+</html>
