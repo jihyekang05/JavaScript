@@ -104,3 +104,18 @@
     padding: 100px 20px;
     background:lightblue;
 }
+
+.slide-container {
+    width: 300vw;
+    transition: all 1s;
+    
+}
+
+.slide-box img{
+    width: 100%;
+}
+
+.slide-box {
+    width: 100vw;
+    float:left;
+}
