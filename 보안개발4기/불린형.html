@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 12;
+        //자동 형전환
+        console.log(`${x} >10 = ${x>10}`);
+
+        x=2;
+        if(x=="")//비교시 타입이 다르면 ""->0으로 바꿔서 비교함
+            console.log("x=0");
+        else
+            console.log("x는 0이 아니다");
+        if(x==="") //===타입도 같고 내용도 같아야 한다.
+            console.log("x는 0이다");
+        else
+            console.log("x는 0입니다");
+    </script>
+</body>
+</html>
