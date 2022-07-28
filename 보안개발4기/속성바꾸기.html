@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="changeColor('red')">빨간색</button>
+    <button type="button" onclick="changeColor('blue')">파란색</button>
+    <button type="button" onclick="changeColor('green')">초록색</button>
+    <button type="button" onclick="changeColor('pink')">분홍색</button>
+    <button type="button" onclick="changeColor('yellow')">노랑색</button>
+    
+</body>
+</html>
+<script>
+    function changeColor(color)
+    {
+        var body = document.getElementsByTagName("body")[0];
+        body.style.backgroundColor = color;
+    }
+</script>
