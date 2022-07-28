@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    x : <input type="text" name="x" id="x"><br>
+    y : <input type="text" name="y" id="y"><br>
+    
+    <button type="button" onclick="goRead()">값읽기</button>
+    <div id="result"></div>
+    
+</body>
+</html>
+<script>
+    function goRead()
+    {
+        var x = document.getElementById("x").value;
+        var y = document.getElementById("y").value;
+        var result = parseInt(x) +parseInt(y);
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
