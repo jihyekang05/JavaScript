@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function display(a){
+            if(a%2==0)
+                console.log(a);
+        }
+
+        let array=[3,5,8,6,7,11,15,14,22];
+
+        for(i=0;i<array.length;i++){
+             /*if(array[i]%w==0)
+                console.log(array[i]);*/
+            display(array[i]);
+        }
+
+        console.log("-------------");
+        array.forEach(display);
+    console.log("--------------")
+    
+    //ForEach구문
+    array.forEach(function(n){
+
+        if(n%2==0){
+            console.log(n);
+        }
+    });
+
+    console.log("--------------")
+
+    //화살표 함수 이용
+    array.forEach((n)=>{
+        if(n%2==0){
+            console.log(n);
+        }
+    })
+
+
+    </script>
+    
+</body>
+</html>
