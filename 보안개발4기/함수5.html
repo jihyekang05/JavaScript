@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let add = function(a,b){
+            return a+b;
+        }
+        function div(x,y){
+            return x/y;
+        }
+
+        //이 함수는 함수의 주소를 매개변수로 받는다
+        function myfunc(callback, x, y){
+            result = callback(x,y);
+            console.log(`${x} ${y} = ${result}`)
+        }
+
+        myfunc(add, 20, 10); //35
+        myfunc(div, 10,2); //5
+        myfunc((x,y)=>{return x-y},20,10);//화살표로 콜백함수 만든다.//10
+        myfunc(function(x,y){return x*y},20,10);//함수표현식 직접 기술 //200
+    </script>
+    
+</body>
+</html>
