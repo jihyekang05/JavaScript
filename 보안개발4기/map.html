@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let words = ['cat','dog','laqun','dolphin','jh'];
+        let array = [3,5,8,6,7,11,15,14,22];
+
+        results = words.map(x=>x.toUpperCase());
+        console.log(results);
+        console.log(words);
+
+        results = words.filter(x=>x.length>5);
+        console.log(results);
+
+        results = array.map(n=>n*2);
+        console.log(results);
+
+        //map함수
+        result = array.map(x=>x*x);
+        console.log(result);
+
+        array.map((x,index)=>{
+            console.log(index,x);
+            return x;
+        });
+
+        let data = [[0,1,2],[3,4,5],[6,7,8]];
+        data2 = data.map((object,index)=>
+        {
+            //console.log(index);
+            console.log(index,object);
+            object = object.map((obj,j)=>{
+                //console.log(obj*2);
+               // console.log(j);
+                console.log(obj);
+                return obj*2;
+            })
+        })
+    </script>
+    
+</body>
+</html>
