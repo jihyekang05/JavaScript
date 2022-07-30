@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title1">제목줄1</h1>
+    <h1 id="title2">제목줄2</h1>
+    <h1 id="title3">제목줄3</h1>
+
+    <p id="id1"></p>
+
+    
+</body>
+</html>
+<script>
+     //브라우저를 자바스크립트 객체로 표현한게 window
+    //window.document - html 태그들을 트리구조 형태로 
+    //개체화시켜서 저장
+    var pTag = document.getElementById("id1");// 없는 id면 console에 null나옴
+    console.log(pTag);
+    pTag.innerHTML="해외도박사";
+
+    //태그로 접근할 때는 배열로 접근한다
+    pTag = document.getElementsByTagName("p");
+    pTag[0].innerHTML = "자바";
+
+    for(i=0;i<pTag.length;i++)
+        pTag[i].innerHTML="배열사용하기";
+
+    document.getElementById('title1').innerHTML="첫번째 제목";
+    document.getElementById('title2').innerHTML="두번째 제목";
+    document.getElementById('title3').innerHTML="세번째 제목";
+    let ids=['title1','title2','title3'];
+    
+    for(i=0;i<ids.length;i++)
+        document.getElementById(ids[i]).sytle.color="#ff0000";
+
+</script>
