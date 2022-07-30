@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <input type="text" name="" id="input" value="10">
+    <button type="button" onclick="loadData()">데이터부르기</button>
+    <script>
+        function sigma(limit=100){
+            //함수가 promise 개체를 반환
+            return new Promise(function(resolve,reject){
+                if(limit<1)
+                    reject("1보다 큰 값을 입력하세요");
+                let s=0;
+                for(i=1;i<=limit;i++){
+                    s+=i;
+                }
+                resolve(s);
+            });
+        }
+
+        function loadData()
+        {
+            let limit = parseInt(document.getElementById("input").value);
+            sigma(limit)
+            .then(sum=>{
+                console.log(sum);
+                document.getElementById("result").innerHTML=sum;
+            })
+            .catch(e=>{
+                alert(e);
+            })
+    }
+    </script>
+    
+</body>
+</html>
