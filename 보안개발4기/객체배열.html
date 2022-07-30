@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let student = [
+        {name:"홍길동", kor:90, eng: 90, mat:80},
+        {name:"장길산", kor:80, eng: 80, mat:100},
+        {name:"임꺽정", kor:70, eng: 70, mat:90},
+        {name:"장승업", kor:60, eng: 80, mat:60},
+        {name:"홍경래", kor:70, eng: 50, mat:40}
+        ];
+
+        console.log("객체의 개수: "+student.length);
+        console.log(student[0].name,student[0].kor, student[0].eng, student[0].mat);
+        console.log(student[1].name, student[1].kor, student[1].eng, student[1].mat);
+        console.log("-------------------------------");
+
+        for(i=0;i<student.length;i++)
+        {
+            console.log(student[i].name, student[i].kor, student[i].eng, student[i].mat);
+        }
+        console.log("-------------------------------");
+
+        //index로 접근
+        for(index in student){
+            console.log(student[index].name, student[index].kor, student[index].eng, student[index].mat)
+        }
+        console.log("-------------------------------");
+        //객체로 접근
+        for(std of student){
+            console.log(std.name,std.kor,std.eng,std.mat);
+        }
+        console.log("-------------------------------");
+
+        for(const [key,value] of Object.entries(student)){
+            console.log(`${key}: ${value.name} ${value.kor}, ${value.eng}, ${value.mat}`);
+
+        }
+        console.log("-------------------------------");
+        let myproduct={
+            "product_name": "노트북",
+            "product_information":[
+                {company:"회사1", model:"modelA",price:20000},
+                {company:"회사2", model:"modelB",price:30000},
+                {company:"회사3", model:"modelC",price:40000}
+            ] 
+        }
+
+        console.log(myproduct.product_name);
+        for(item of myproduct.product_information){
+            console.log(item.company,item.model,item.price)
+        }
+
+    </script>
+    
+</body>
+</html>
