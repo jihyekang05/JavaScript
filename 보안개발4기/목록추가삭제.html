@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="product" id="product">
+    <button type="button" id="btnAdd" >추가</button>
+    <button type="button" id="btnDel">삭제</button>
+    <br>
+    <ul id="coffee">
+        <li>아메리카노</li>
+    </ul>
+    
+</body>
+</html>
+
+<script>
+    window.onload=function(){
+        document.getElementById("btnAdd").addEventListener("click", funAdd);
+        document.getElementById("btnDel").addEventListener("click",funDel);
+    }
+
+    function funAdd()
+    {
+        var product = document.getElementById("product");
+        if(product.value.trim().length==0) //trim()-공백제거
+        {
+            alert("데이터를 입력하세요");
+            product.focus();
+            return false;//함수 종료
+        }
+
+        var coffee = document.getElementById("coffee");
+        //새로운 li태그를 작성한다
+        var child = document.createElement("li");
+        coffee.appendChild(child);
+        //input태그로 부터 값을 읽어서 저장한다.
+
+        child.innerHTML = product.value;
+        product.value="";//데이터 입력한 후 삭제
+        product.focus();
+    }
+
+    function funDel()
+    {
+        var coffee = document.getElementById("coffee");
+        console.log(coffee.children.length);
+        if(coffee.children.length>1)
+        {
+            coffee.removeChild(coffee.lastChild); //맨 마지막 요소 삭제
+        }
+        else
+        {
+            alert('더이상 삭제 불가');
+        }
+    }
+</script>
