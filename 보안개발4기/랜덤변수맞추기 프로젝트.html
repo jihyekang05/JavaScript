@@ -61,55 +61,51 @@
         var guess = document.getElementById('guesses');
         var lastRes = document.getElementById('lastResult');
         var lowOrhigh = document.getElementById('lowOrHi');
-        var nums=" ";
         var random_num = RandomNumber(1,100);
         const newgame = document.getElementById('newgame');
-        var cnt=0;
+        var cnt = 0;
+        var nums = " ";
 
         // functions 
         function Previous_Guess(){
-            if(cnt<10){
-                nums+= n.value + " ";
+            if(cnt < 10){
+                nums += n.value + " ";
                 console.log(nums);
-                guess.innerHTML = 'Previous guesses:'+nums;
+                guess.innerHTML = 'Previous guesses:' + nums;
 
                 //wrong right distinguish
                 if(n.value==random_num)
                 {
                     lastRes.style.backgroundColor = 'green'
-                    lastRes.innerHTML = "Congratulations!";
-                    
+                    lastRes.innerHTML = "Congratulations!";   
+                     //버튼 등장하게 만들기
+                    lowOrhigh.innerHTML = "Right";
+                    newgame.style.display = 'block';
                 }
                 else
                 {
+                    if(n.value>random_num){
+                    lowOrhigh.innerHTML = "Too Big";
+                    newgame.style.display = 'none';
+                    }
+                    else{
+                        lowOrhigh.innerHTML = "Too Small";
+                        newgame.style.display = 'none';
+                    }
                     lastRes.style.backgroundColor = 'red'
                     lastRes.innerHTML = "Try again!";
                 }
 
-                //large, small
-                if(n.value>random_num){
-                    lowOrhigh.innerHTML="Too Big";
-                    newgame.style.display='none';
-
-                }
-                else if(n.value<random_num){
-                    lowOrhigh.innerHTML="Too Small";
-                    newgame.style.display='none';
-                }
-                else{
-                    //버튼 등장하게 만들기
                 
-                    lowOrhigh.innerHTML="Right";
-                    newgame.style.display='block';
-                }
-
-                cnt+=1;
+                cnt += 1;
             }
             else{
-                lastRes.style.backgroundColor='grey';
-                lastRes.innerHTML="You Failed";
+                lastRes.style.backgroundColor = 'grey';
+                lastRes.innerHTML = "You Failed";
                 guess.innerHTML = "";
-                lowOrhigh.innerHTML="";
+                lowOrhigh.innerHTML = "";
+                lowOrhigh.innerHTML = "Right";
+                newgame.style.display = 'block';
 
             }
 
