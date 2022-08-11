@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .form input[type="number"] {
+            width: 200px;
+        }
+
+        .lastResult {
+            color: white;
+            padding: 3px;
+        }
+        #newgame{
+            display: none;
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+    <h1>Number guessing game</h1>
+
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you
+        if your guess was too high or too low.</p>
+
+    <div class="form">
+        <label for="guessField">Enter a guess: </label>
+        <input type="number" min="1" max="100" required id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit" id="submit" >
+    </div>
+
+    <div class="resultParas">
+        <p class="guesses" id="guesses"></p>
+        <p class="lastResult" id="lastResult"></p>
+        <p class="lowOrHi" id="lowOrHi"></p>
+        <input type="reset" value="Start new game" id="newgame">
+    </div>
+
+    <script>
+    
+        var n = document.getElementById('guessField');//입력한 추측값
+        var submit = document.getElementById('submit');//값 제출 버튼
+        var resultParas = document.getElementsByClassName('resultParas');
+        var guess = document.getElementById('guesses');
+        var lastRes = document.getElementById('lastResult');
+        var lowOrhigh = document.getElementById('lowOrHi');
+        var nums=" ";
+        var random_num = RandomNumber(1,100);
+        const newgame = document.getElementById('newgame');
+        var cnt=0;
+
+        // functions 
+        function Previous_Guess(){
+            
+                nums+= n.value + " ";
+                console.log(nums);
+                guess.innerHTML = 'Previous guesses:'+nums;
+
+                //wrong right distinguish
+                if(n.value==random_num)
+                {
+                    lastRes.style.backgroundColor = 'green'
+                    lastRes.innerHTML = "Congratulations!";
+                    console.log("d");
+                }
+                else
+                {
+                    lastRes.style.backgroundColor = 'red'
+                    lastRes.innerHTML = "Try again!";
+                }
+
+                //large, small
+                if(n.value>random_num){
+                    lowOrhigh.innerHTML="Too Big";
+                    newgame.style.display='none';
+
+                }
+                else if(n.value<random_num){
+                    lowOrhigh.innerHTML="Too Small";
+                    newgame.style.display='none';
+                }
+                else{
+                    //버튼 등장하게 만들기
+                
+                    lowOrhigh.innerHTML="Right";
+                    newgame.style.display='block';
+                }
+
+                cnt+=1;
+
+
+            // 입력값을 읽는다
+            // 체크 -> 
+              // 1. 맞는 경우 => 이 전 숫자들 나열, 축하합니다, start new game버튼 등장
+              //2. 틀린 경우 => 전 숫자들 나열, 틀렸습니다
+            
+        }
+
+        //난수발생 함수
+        function RandomNumber(min,max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+
+        //submit클릭했을 때 실행될 함수
+        submit.addEventListener('click',Previous_Guess);
+
+        console.log(random_num);
+    </script>
+</body>
+
+</html>
