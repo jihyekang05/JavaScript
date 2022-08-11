@@ -50,7 +50,7 @@
         <p class="guesses" id="guesses"></p>
         <p class="lastResult" id="lastResult"></p>
         <p class="lowOrHi" id="lowOrHi"></p>
-        <input type="reset" value="Start new game" id="newgame">
+        <button type="submit" id="newgame" onclick="window.location.reload()">Start new game</button>
     </div>
 
     <script>
@@ -68,7 +68,7 @@
 
         // functions 
         function Previous_Guess(){
-            
+            if(cnt<10){
                 nums+= n.value + " ";
                 console.log(nums);
                 guess.innerHTML = 'Previous guesses:'+nums;
@@ -78,7 +78,7 @@
                 {
                     lastRes.style.backgroundColor = 'green'
                     lastRes.innerHTML = "Congratulations!";
-                    console.log("d");
+                    
                 }
                 else
                 {
@@ -104,7 +104,14 @@
                 }
 
                 cnt+=1;
+            }
+            else{
+                lastRes.style.backgroundColor='grey';
+                lastRes.innerHTML="You Failed";
+                guess.innerHTML = "";
+                lowOrhigh.innerHTML="";
 
+            }
 
             // 입력값을 읽는다
             // 체크 -> 
